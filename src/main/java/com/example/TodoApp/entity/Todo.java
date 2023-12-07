@@ -23,14 +23,13 @@ import java.sql.Date;
     private Long assign_member_id;
     private Long created_user_id;
     private String assigned_date;
-
+    private String estimated_hours;
+    private String start_date;
+    private String end_date;
     @CreatedDate
     private Date created_date;
     @LastModifiedDate
     private Date updated_date;
     
-    private String estimated_hours;
-    private String start_date;
-    private String end_date;
     
 }
