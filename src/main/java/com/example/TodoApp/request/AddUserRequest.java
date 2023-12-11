@@ -19,9 +19,9 @@ public class AddUserRequest {
     private String email;
     private String password;
     @CreatedDate
-    private Date created_date;
+    private Date createdDate;
     @LastModifiedDate
-    private Date updated_date;
+    private Date updatedDate;
     
     
     

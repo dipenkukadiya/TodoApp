@@ -15,21 +15,21 @@ import java.sql.Date;
     public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long todo_id;
+    private Long todoId;
 
-    private String task_name;
+    private String taskname;
     private String discription;
     private String status;
-    private Long assign_member_id;
-    private Long created_user_id;
-    private String assigned_date;
-    private String estimated_hours;
-    private String start_date;
-    private String end_date;
+    private Long assignMemberId;
+    private Long createdUserId;
+    private String assignedDate;
+    private String estimatedHours;
+    private String startDate;
+    private String endDate;
     @CreatedDate
-    private Date created_date;
+    private Date createdDate;
     @LastModifiedDate
-    private Date updated_date;
+    private Date updatedDate;
     
     
 }
