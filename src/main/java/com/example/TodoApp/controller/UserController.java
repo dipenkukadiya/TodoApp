@@ -17,7 +17,7 @@ import com.example.TodoApp.entity.User;
 import com.example.TodoApp.service.UserService;
 
 @RestController
-// @RequestMapping("/users/")
+@RequestMapping("/users/")
 public class UserController {
     // private UserRepository userRepository;
 
@@ -34,15 +34,15 @@ public class UserController {
     //     return "Welcome  users";
     // }
 
-    @GetMapping("/users/")
+    @GetMapping
     public List<User> getUsers() {
         return userService.getUsers();
     }
-    @GetMapping("/users/{userId}")
+    @GetMapping("/{userId}")
     public User getUserById(@PathVariable Long userId) {
         return userService.getUserById(userId);
     }
-    @PostMapping("/users/")
+    @PostMapping
     public void addUser(@RequestBody User user) {
         userService.addUser(user);
     
@@ -51,7 +51,7 @@ public class UserController {
     public void removeUser(@PathVariable Long userId) {
         userService.removeUser(userId);
     }
-    @PutMapping("/users/{userId}")
+    @PutMapping("/{userId}")
     public void updateUser(@RequestBody User user,@PathVariable Long userId){
         userService.updateUser(user,userId);    
     }
