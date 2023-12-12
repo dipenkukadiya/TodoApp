@@ -1,44 +1,42 @@
 package com.example.TodoApp.service;
-import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.TodoApp.entity.User;
+import com.example.TodoApp.repository.UserRepository;
 
 
 @Service
 public class UserServiceImpl implements UserService{
-    List<User> userlist = Arrays.asList(
-       new User());
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<User> getUsers() {
-       return userlist;
+       return userRepository.findAll();
     }
 
     @Override
     public User getUserById(Long userId) {
-   return userlist.stream().filter(e -> e.userId == userId).findFirst().get();
+   return userRepository.findById(userId).get();
     }
 
     @Override
     public void addUser(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addUser'");
+       userRepository.save(user);
     }
 
     @Override
-    public void updateUser(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateUser'");
+    public void updateUser(User user, Long userId) {    
+        userRepository.save(user);
     }
 
     @Override
-    public void removeUser(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeUser'");
-    }
+    public void removeUser(Long userId) {
+        userRepository.deleteById(userId);
+   }
 
 
     
