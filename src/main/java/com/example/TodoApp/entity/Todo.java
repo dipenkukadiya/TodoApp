@@ -32,4 +32,5 @@ import java.sql.Date;
     private Date updatedDate;
     
     
+    
 }
