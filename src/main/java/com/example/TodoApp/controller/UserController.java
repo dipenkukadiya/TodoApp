@@ -11,51 +11,51 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.TodoApp.entity.User;
-// import com.example.TodoApp.repository.UserRepository;
 import com.example.TodoApp.service.UserService;
 
 @RestController
 @RequestMapping("/users/")
 public class UserController {
-    // private UserRepository userRepository;
-
-    // public UserController(UserRepository userRepository) {
-    //     this.userRepository = userRepository;
-
-    // }
 
     @Autowired
     UserService userService;
-
-    // @RequestMapping("/welcome")
-    // public String welcome() {
-    //     return "Welcome  users";
-    // }
 
     @GetMapping
     public List<User> getUsers() {
         return userService.getUsers();
     }
+
     @GetMapping("/{userId}")
     public User getUserById(@PathVariable Long userId) {
         return userService.getUserById(userId);
     }
+
     @PostMapping
     public void addUser(@RequestBody User user) {
         userService.addUser(user);
-    
+
     }
+
     @DeleteMapping("/{userId}")
     public void removeUser(@PathVariable Long userId) {
         userService.removeUser(userId);
     }
+
     @PutMapping("/{userId}")
-    public void updateUser(@RequestBody User user,@PathVariable Long userId){
-        userService.updateUser(user,userId);    
+    public void updateUser(@RequestBody User user, @PathVariable Long userId) {
+        userService.updateUser(user, userId);
     }
 }
+
+// through the direct repository interface
+// private UserRepository userRepository;
+
+// public UserController(UserRepository userRepository) {
+// this.userRepository = userRepository;
+
+// }
+
 // @GetMapping("/{userId}")
 // public User getUserById(@PathVariable Long userId) {
 // return userRepository.findById(userId).get();
