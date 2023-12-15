@@ -1,9 +1,5 @@
 package com.example.TodoApp.entity;
 
-import java.sql.Date;
-
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
