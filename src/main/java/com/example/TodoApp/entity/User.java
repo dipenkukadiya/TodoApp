@@ -5,7 +5,7 @@ import java.sql.Date;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import com.example.MaskedPassword;
+import com.example.TodoApp.security.MaskedPassword;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import jakarta.persistence.Column;
