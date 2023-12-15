@@ -5,6 +5,7 @@ import java.sql.Date;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,13 +15,14 @@ import lombok.Data;
 @Entity
 @Data
 public class UserRole {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id  @Column(name = "role_id") @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long roleId;
-    private String rolename;
+    @Column(name = "role_name")
+    private String roleName;
+    @Column(name = "role_discription")
     private String roleDiscription;
-    @CreatedDate
+    @CreatedDate @Column(name = "created_date")
     private Date createdDate;
-    @LastModifiedDate
+    @LastModifiedDate @Column(name = "updated_date")
     private Date updatedDate;
 }

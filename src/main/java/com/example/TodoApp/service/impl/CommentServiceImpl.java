@@ -1,4 +1,4 @@
-package com.example.TodoApp.service;
+package com.example.TodoApp.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.TodoApp.entity.Comment;
 import com.example.TodoApp.repository.CommentRepository;
+import com.example.TodoApp.service.CommentService;
 @Service
 public class CommentServiceImpl implements CommentService {
 

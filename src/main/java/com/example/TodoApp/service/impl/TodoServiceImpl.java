@@ -1,4 +1,4 @@
-package com.example.TodoApp.service;
+package com.example.TodoApp.service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.TodoApp.entity.Todo;
 
 import com.example.TodoApp.repository.TodoRepository;
+import com.example.TodoApp.service.TodoService;
 
 @Service
 public class TodoServiceImpl implements TodoService {

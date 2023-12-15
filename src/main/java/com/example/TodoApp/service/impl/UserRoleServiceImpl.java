@@ -1,4 +1,4 @@
-package com.example.TodoApp.service;
+package com.example.TodoApp.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.TodoApp.entity.UserRole;
 import com.example.TodoApp.repository.UserRoleRepository;
+import com.example.TodoApp.service.UserRoleService;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService{
