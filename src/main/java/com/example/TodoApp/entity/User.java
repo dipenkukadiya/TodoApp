@@ -5,8 +5,8 @@ import java.sql.Date;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.example.MaskedPassword;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,8 +33,8 @@ public class User {
     
     @Column(name = "email" )
     private String email;
-    @JsonIgnoreProperties
-    @Column(name = "password")
+
+    @Column(name = "password") @JsonSerialize(using = MaskedPassword.class)
     private String password;
     @CreatedDate @Column(name = "created_date")
     private Date createdDate;
