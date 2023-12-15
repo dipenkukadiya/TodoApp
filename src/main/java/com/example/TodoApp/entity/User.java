@@ -20,25 +20,34 @@ import lombok.Data;
 @Entity
 @Data
 public class User {
-    @Id @Column(name = "user_id") @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long userId;
+
     @Column(name = "first_name")
     private String firstname;
+
     @Column(name = "last_name")
     private String lastname;
-    
+
     @ManyToOne
     @JoinColumn(name = "user_role_id")
     private UserRole userRole;
-    
-    @Column(name = "email" )
+
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "password") @JsonSerialize(using = MaskedPassword.class)
+    @Column(name = "password")
+    @JsonSerialize(using = MaskedPassword.class)
     private String password;
-    @CreatedDate @Column(name = "created_date")
+
+    @CreatedDate
+    @Column(name = "created_date")
     private Date createdDate;
-    @LastModifiedDate @Column(name = "updated_date")
+    
+    @LastModifiedDate
+    @Column(name = "updated_date")
     private Date updatedDate;
 
 }

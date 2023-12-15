@@ -19,10 +19,13 @@ import lombok.Data;
     public class Todo {
     @Id @Column(name = "todo_id") @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long todoId;
+
     @Column(name = "task_name")
     private String taskname;
+
     @Column(name = "discription")
     private String discription;
+
     @Column(name = "status")
     private String status;
 
@@ -36,14 +39,19 @@ import lombok.Data;
 
     @Column(name = "assigned_date")
     private String assignedDate;
+
     @Column(name = "estimated_hours")
     private String estimatedHours;
+
     @Column(name = "start_date")
     private String startDate;
+
     @Column(name = "end_date")
     private String endDate;
+
     @CreatedDate @Column(name = "created_date")
     private Date createdDate;
+    
     @LastModifiedDate @Column(name = "updated_date")
     private Date updatedDate;
     

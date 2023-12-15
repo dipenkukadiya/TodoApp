@@ -30,8 +30,10 @@ public class Comment {
     
     @Column(name = "comment_content")
     private String commentContent;
+
     @CreatedDate @Column(name = "created_date")
     private Date createdDate;
+    
     @LastModifiedDate @Column(name = "updated_date")
     private Date updatedDate;
 }

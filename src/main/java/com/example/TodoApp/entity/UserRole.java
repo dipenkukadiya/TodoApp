@@ -21,8 +21,5 @@ public class UserRole {
     private String roleName;
     @Column(name = "role_discription")
     private String roleDiscription;
-    @CreatedDate @Column(name = "created_date")
-    private Date createdDate;
-    @LastModifiedDate @Column(name = "updated_date")
-    private Date updatedDate;
+    
 }
