@@ -10,4 +10,4 @@
 
 -->  flyway database migration 9.0.0
 
--->  for annotation easily serilize use lombok
+-->  for serialization anotation easily , use lombok
