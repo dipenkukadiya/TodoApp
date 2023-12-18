@@ -31,17 +31,17 @@ public class User {
     @Column(name = "last_name")
     private String lastname;
 
-    @ManyToOne
-    @JoinColumn(name = "user_role_id")
-    private UserRole userRole;
-
     @Column(name = "email")
     private String email;
-
+    
     @Column(name = "password")
     @JsonSerialize(using = MaskedPassword.class)
     private String password;
-
+    
+    @ManyToOne
+    @JoinColumn(name = "user_role_id")
+    private UserRole userRole;
+    
     @CreatedDate
     @Column(name = "created_date")
     private Date createdDate;
