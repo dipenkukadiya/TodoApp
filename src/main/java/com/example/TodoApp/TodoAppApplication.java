@@ -16,14 +16,14 @@ import com.example.TodoApp.repository.UserRoleRepository;
 
 @SpringBootApplication
 public class TodoAppApplication implements CommandLineRunner {
-	// @Autowired
-	// private UserRepository userRepository;
-	// @Autowired
-	// private TodoRepository todoRepository;
-	// @Autowired
-	// private CommentRepository commentRepository;
-	// @Autowired
-	// private UserRoleRepository userRoleRepository;
+	@Autowired
+	private UserRepository userRepository;
+	@Autowired
+	private TodoRepository todoRepository;
+	@Autowired
+	private CommentRepository commentRepository;
+	@Autowired
+	private UserRoleRepository userRoleRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TodoAppApplication.class, args);
