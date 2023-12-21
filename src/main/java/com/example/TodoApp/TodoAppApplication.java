@@ -35,6 +35,7 @@ public class TodoAppApplication implements CommandLineRunner {
 		Todo todo = new Todo();
 		UserRole userRole = new UserRole();
 		Comment comment = new Comment();
+		
 		todoRepository.save(todo);
 		userRepository.save(user);
 		userRoleRepository.save(userRole);
