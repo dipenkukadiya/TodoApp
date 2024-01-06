@@ -39,7 +39,7 @@ public class TodoAppApplication implements CommandLineRunner {
 		todoRepository.save(todo);
 		userRepository.save(user);
 		userRoleRepository.save(userRole);
-		commentRepository.save(comment);		
+		commentRepository.save(comment);
 
 	}
 
