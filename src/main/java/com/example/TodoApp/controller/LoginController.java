@@ -5,14 +5,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("hello")
 public class LoginController {
 
-    @Override
-    @GetMapping
-    public String toString() {
-        return "Welcome to TODO App";
+    @GetMapping("user")
+    public String helloUser(){
+        return "hello i am user ";
     }
-    
+    @GetMapping("admin")
+    public String helloAdmin(){
+        return "hello i am admin ";
+    }
     
 }
