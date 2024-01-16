@@ -25,12 +25,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long userId;
 
-    @Column(name = "first_name")
-    private String firstname;
-
-    @Column(name = "last_name")
-    private String lastname;
-
+    @Column(name = "user_name")
+    private String Username;
     @ManyToOne
     @JoinColumn(name = "user_role_id")
     private UserRole userRole;
