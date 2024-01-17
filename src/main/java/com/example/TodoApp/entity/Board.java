@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+ 
 import lombok.Data;
 
 @Entity
@@ -12,12 +13,8 @@ import lombok.Data;
 public class Board {
     @Id
     @Column(name = "board_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "workspace_id")
-    // private Workspace workspace;
 
     @Column(name = "board_title")
     private String title;
@@ -32,4 +29,5 @@ public class Board {
     private Boolean archive;
 
    
+
 }

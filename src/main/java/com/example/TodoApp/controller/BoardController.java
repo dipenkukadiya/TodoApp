@@ -1,28 +1,43 @@
 // package com.example.TodoApp.controller;
 
 // import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.web.bind.annotation.PathVariable;
-// import org.springframework.web.bind.annotation.PostMapping;
-// import org.springframework.web.bind.annotation.RequestBody;
-// import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.RestController;
+// import org.springframework.http.HttpStatus;
+// import org.springframework.http.ResponseEntity;
+// import org.springframework.web.bind.annotation.*;
 
 // import com.example.TodoApp.entity.Board;
+// import com.example.TodoApp.request.BoardRequest;
 // import com.example.TodoApp.service.BoardService;
-// import com.example.TodoApp.service.WorkspaceService;
 
 // @RestController
-// @RequestMapping("/boards/")
+// @RequestMapping("/workspace/{workspaceId}/board")
 // public class BoardController {
-//     @Autowired
-//     BoardService boardService;
-//     @Autowired
-//     WorkspaceService workspaceService;
-    
-//     @PostMapping("/{workspace_id}/board")
-//     public void addBoard(@PathVariable Long workspace_id,@RequestBody Board board) {
-//         boardService.addBoard(workspace_id, board);
 
+//     @Autowired
+//     private BoardService boardService;
+
+//     @PostMapping("/add")
+//     public ResponseEntity<Void> addBoard(@PathVariable Long workspaceId, @RequestBody BoardRequest boardRequest) {
+//         boardService.addBoard(workspaceId, boardRequest);
+//         return ResponseEntity.status(HttpStatus.CREATED).build();
 //     }
-    
+
+//     @GetMapping("/{boardId}")
+//     public ResponseEntity<Board> getBoard(@PathVariable Long workspaceId, @PathVariable Long boardId) {
+//         Board board = boardService.getBoard(workspaceId, boardId);
+//         return ResponseEntity.ok(board);
+//     }
+
+//     @PutMapping("/{boardId}")
+//     public ResponseEntity<Void> updateBoard(@PathVariable Long workspaceId, @PathVariable Long boardId,
+//                                             @RequestBody BoardRequest updatedBoard) {
+//         boardService.updateBoard(workspaceId, updatedBoard, boardId);
+//         return ResponseEntity.ok().build();
+//     }
+
+//     @DeleteMapping("/{boardId}")
+//     public ResponseEntity<Void> removeBoard(@PathVariable Long workspaceId, @PathVariable Long boardId) {
+//         boardService.removeBoard(workspaceId, boardId);
+//         return ResponseEntity.ok().build();
+//     }
 // }
